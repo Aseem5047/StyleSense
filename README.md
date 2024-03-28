@@ -1,6 +1,6 @@
-# Style Sense
+# StyleSense
 
-CrowdVista is a dynamic MERN stack application, built on React Vite, that serves as a feature-rich ...
+StyleSense is a dynamic MERN stack application, built on React Vite, that serves as a feature-rich ...
 
 ![image](https://github.com/Aseem5047/crowdvista/assets/80787027/c52b85b5-25ab-4891-aba1-3c7fa582c9cd)
 
