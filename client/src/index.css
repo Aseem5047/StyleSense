@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.no-scrollbar::-webkit-scrollbar {
+	display: none !important;
+}
+
+::-webkit-scrollbar {
+	height: 1rem;
+	width: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #03a9f4f0;
+	border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: #03a8f477;
+}
+
+::-webkit-scrollbar-track {
+	background-color: transparent;
+	border-radius: 9999px;
+}
+
+:root {
+	--default-color: #03a9f4f0;
+	--secondary-color: #03a8f477;
+	--primary-color: #ffffff; /* Default color */
+}
+
+[data-theme="light"] {
+	--bg-color: white;
+	--text-color: #333333;
+	--primary-color: #000000;
+	--selected-color: var(--primary-color);
+}
+
+/* Dark mode styles */
+[data-theme="dark"] {
+	--bg-color: #444343;
+	--text-color: #ffffff;
+	--primary-color: #ffffff;
+	--selected-color: var(--primary-color);
+}
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+@layer base {
+	body {
+		@apply font-family bg-[var(--bg-color)] text-[var(--selected-color)];
+	}
+}
+
+@layer utilities {
+	.navLink {
+		@apply text-base transition-all duration-500 hover:px-4 hover:py-2 rounded-full hover:bg-[var(--default-color)] hover:text-white;
+	}
+
+	.button {
+		@apply flex items-center justify-center px-4 py-2 bg-primary rounded-xl text-white hover:opacity-80 hover:scale-105 transition-all duration-500 font-medium;
+	}
+
+	.input {
+		@apply border rounded-lg w-full border-gray-300 outline-none p-4 hover:text-black hover:bg-gray-100;
+	}
+
+	.authButton {
+		@apply flex items-center text-center justify-center p-4 px-8 w-fit shadow-md rounded-lg font-medium text-base mt-4 hover:opacity-80;
+	}
+
+	.input-error {
+		@apply text-red-500;
+	}
+	.error-message {
+		@apply text-red-500 text-sm px-[0.25rem] text-start w-full;
+	}
+
+	.themeEditorButtons {
+		@apply flex gap-2 items-center border-2 shadow-md p-2 rounded-full sm:rounded-xl md:rounded-full 1xl:rounded-xl transition-all duration-500 hover:bg-[var(--default-color)] hover:text-white cursor-pointer;
+	}
+
+	.visible,
+	.previous,
+	.next,
+	.nextNext,
+	.previousPrev {
+		@apply transition-all duration-1000 ease-out;
+	}
+
+	.visible {
+		@apply scale-125 w-full px-10 sm:px-0 z-30;
+	}
+
+	.previous,
+	.next {
+		@apply scale-110 w-1/2 hidden sm:block z-20;
+	}
+
+	.nextNext,
+	.previousPrev {
+		@apply hidden lg:block w-1/2 scale-90 z-10;
+	}
+
+	.next {
+		@apply -translate-x-[10%] 2xl:translate-x-[25%];
+	}
+
+	.previous {
+		@apply translate-x-[10%] 2xl:-translate-x-[25%];
+	}
+
+	.next,
+	.nextNext {
+		@apply hover:rotate-3;
+	}
+	.previous,
+	.previousPrev {
+		@apply hover:-rotate-3;
+	}
+}
