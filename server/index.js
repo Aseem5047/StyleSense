@@ -18,7 +18,7 @@ app.use(cookieParser())
 // Handle preflight requests
 app.use(cors({
     credentials: true,
-    origin: ['http://127.0.0.1:5173', 'https://stylesense.vercel.app'],
+    origin: ['http://127.0.0.1:5173', 'https://stylesensing.vercel.app'],
 }))
 
 dotenv.config();

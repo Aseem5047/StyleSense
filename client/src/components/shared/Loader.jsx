@@ -5,7 +5,7 @@ const Loader = ({ height = "screen" }) => {
 		<>
 			<div className={`h-${height} flex items-center justify-center`}>
 				<img
-					src="\src\assets\Loading.gif"
+					src="\assets\Loading.gif"
 					alt=""
 					className="m-auto rounded-xl w-80 h-80"
 				/>

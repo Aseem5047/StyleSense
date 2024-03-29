@@ -26,7 +26,11 @@ export const AuthProvider = ({ children }) => {
 				setDarkTheme(response.data.themeSelected === "dark");
 				setIsAuthenticated(true);
 				// navigate("/");
-				toast.success(`Hey ${response.data.username} Glad to Have You`);
+				toast.success(
+					`Hey ${
+						response.data.username ? response.data.username : "Friend"
+					} Glad to Have You`
+				);
 
 				return true;
 			}

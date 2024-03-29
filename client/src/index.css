@@ -67,7 +67,7 @@
 	}
 
 	.input {
-		@apply border rounded-lg w-full border-gray-300 outline-none p-4 hover:text-black hover:bg-gray-100;
+		@apply border rounded-lg w-full border-gray-300 outline-none p-4  hover:opacity-75 bg-transparent;
 	}
 
 	.authButton {

@@ -3,9 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { getBasketItems } from "../../lib/basketSlice";
 import { Link, useNavigate } from "react-router-dom";
 import useThemeToggle from "../../context/ThemeToggle";
-import { SwatchesPicker, SketchPicker } from "react-color";
 import GetRandomImage from "../../utils/GetRandomImage";
-import { clearUser, getUser } from "../../lib/authSlice";
+import { clearUser } from "../../lib/authSlice";
 import toast from "react-hot-toast";
 import Cookies from "js-cookie";
 import useAuth from "../../context/AuthContext";
@@ -13,37 +12,30 @@ import Search from "./Search";
 import ThemeEditor from "./ThemeEditor";
 
 const Navbar = () => {
-	// State to store and manage the selected color
-	const [toggleColorSelector, setToggleColorSelector] = useState(false);
 	const [toggleSignOutMenu, setToggleSignOutMenu] = useState(false);
 	const totalCartItems = useSelector(getBasketItems);
 	const user = useSelector((state) => state.auth.user);
-	const { checkAuthUser } = useAuth();
+	const { checkAuthUser, setIsAuthenticated } = useAuth();
+	const navigate = useNavigate();
 	const dispatch = useDispatch();
+	const { theme } = useThemeToggle();
 
-	const { theme, toggleTheme, selectedColor, setSelectedColor } =
-		useThemeToggle();
 	// List of image filenames
 	let imageList = ["1.png", "2.png", "3.png", "4.png", "5.png"];
 
 	const randomImage = GetRandomImage(imageList);
 
-	// Handler for color change
-	const handleColorChange = (color) => {
-		setSelectedColor(color.hex);
-	};
-
 	const handleLogout = async (event) => {
-		event.preventDefault();
-
 		try {
 			setToggleSignOutMenu(false);
 			// Remove token from localStorage and cookies
-			localStorage.removeItem("userDetails");
 			Cookies.remove("token");
+			localStorage.clear();
 			// Dispatch action to clear user
 			dispatch(clearUser());
-			checkAuthUser();
+			toast.success("User Logged Out");
+			setIsAuthenticated(false);
+			navigate("/authenticate");
 		} catch (error) {
 			console.error("Logout error:", error);
 			toast.error("Something Went Wrong");
@@ -87,7 +79,7 @@ const Navbar = () => {
 					/>
 					<div className="hidden lg:flex flex-col items-center justify-start">
 						<span className="text-base font-medium hover:scale-105 overflow-hidden whitespace-nowrap text-ellipsis max-w-24">
-							Hello {user ? user?.fullname.split(" ")[0] : "Guest"}
+							Hello {user ? user?.fullname?.split(" ")[0] : "Guest"}
 						</span>
 						<span className="text-sm text-primary w-full hover:scale-105">
 							@{user ? user?.username : "guest"}

@@ -104,7 +104,7 @@ const ThemeEditor = () => {
 				</span>
 			</div>
 
-			{selectedColor.length > 0 && (
+			{selectedColor?.length > 0 && (
 				<button
 					onClick={() => setSelectedColor("")}
 					className={`themeEditorButtons ${

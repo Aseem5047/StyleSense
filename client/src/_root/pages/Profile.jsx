@@ -3,13 +3,15 @@ import { useSelector } from "react-redux";
 import { getUser } from "../../lib/authSlice";
 import { Cursor, Typewriter } from "react-simple-typewriter";
 import moment from "moment/moment";
-import useThemeToggle from "../../context/ThemeToggle";
-import { SketchPicker, SwatchesPicker } from "react-color";
 import Search from "../../components/shared/Search";
 import ThemeEditor from "../../components/shared/ThemeEditor";
+import GetRandomImage from "../../utils/GetRandomImage";
 const Profile = () => {
 	const user = useSelector(getUser);
+	// List of image filenames
+	let imageList = ["1.png", "2.png", "3.png", "4.png", "5.png"];
 
+	const randomImage = GetRandomImage(imageList);
 	return (
 		<div className="flex flex-col items-center justify-center gap-7 py-2 px-4 lg:w-4/5 min-h-[100%]">
 			<h1 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold w-full text-center">
