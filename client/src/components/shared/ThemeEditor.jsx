@@ -30,7 +30,7 @@ const ThemeEditor = () => {
 						viewBox="0 0 24 24"
 						strokeWidth={1.5}
 						stroke="currentColor"
-						className="w-6 h-6 transition-all duration-500 group-hover:stroke-white"
+						className="w-5 h-5 sm:w-6 sm:h-6 transition-all duration-500 group-hover:stroke-white"
 					>
 						<path
 							strokeLinecap="round"
@@ -45,7 +45,7 @@ const ThemeEditor = () => {
 						viewBox="0 0 24 24"
 						strokeWidth={1.5}
 						stroke="currentColor"
-						className="w-6 h-6"
+						className="w-5 h-5 sm:w-6 sm:h-6"
 					>
 						<path
 							strokeLinecap="round"
@@ -74,7 +74,7 @@ const ThemeEditor = () => {
 					viewBox="0 0 24 24"
 					strokeWidth={1.5}
 					stroke="currentColor"
-					className="w-6 h-6 transition-all duration-500 group-hover:stroke-white"
+					className="w-5 h-5 sm:w-6 sm:h-6 transition-all duration-500 group-hover:stroke-white"
 					onClick={() => setToggleColorSelector((prev) => !prev)}
 				>
 					<path
@@ -120,7 +120,7 @@ const ThemeEditor = () => {
 						viewBox="0 0 24 24"
 						strokeWidth={1.5}
 						stroke="currentColor"
-						className="w-6 h-6 "
+						className="w-5 h-5 sm:w-6 sm:h-6"
 					>
 						<path
 							strokeLinecap="round"
