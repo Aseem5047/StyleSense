@@ -7,6 +7,7 @@ const Register = ({
 	data,
 	isFormValid,
 	handleSubmit,
+	loading,
 }) => {
 	const handleKeyDown = (e) => {
 		if (e.key === ("Enter" || "13") && isFormValid) {
@@ -106,7 +107,7 @@ const Register = ({
 						} `}
 						onClick={handleSubmit}
 					>
-						Register
+						{loading ? <Loader /> : "Register"}
 					</button>
 				</div>
 			</div>

@@ -18,6 +18,7 @@ const Authenticate = () => {
 		password: "",
 	};
 	const { checkAuthUser } = useAuth();
+	const [loading, setLoading] = useState(false);
 
 	// List of image filenames
 	let imageList = ["1.png", "2.png", "3.png", "4.png", "5.png"];
@@ -139,6 +140,7 @@ const Authenticate = () => {
 		// e.preventDefault();
 		if (register) {
 			try {
+				setLoading(true);
 				await axios
 					.post("/auth/register", {
 						fullname: data.fullname,
@@ -152,6 +154,7 @@ const Authenticate = () => {
 					.then(() => checkAuthUser())
 					.catch((error) => error.message);
 
+				setLoading(false);
 				toast.success("User Registered Successfully");
 				navigate("/");
 			} catch (error) {
@@ -160,6 +163,7 @@ const Authenticate = () => {
 			}
 		} else {
 			try {
+				setLoading(true);
 				await axios
 					.post("/auth/login", {
 						username: data.username,
@@ -167,6 +171,8 @@ const Authenticate = () => {
 						password: data.password,
 					})
 					.then(() => checkAuthUser());
+
+				setLoading(true);
 				toast.success("User Logged In Successfully");
 				navigate("/");
 			} catch (error) {
@@ -187,6 +193,7 @@ const Authenticate = () => {
 					handleChange={handleChange}
 					isFormValid={isFormValid}
 					handleSubmit={handleSubmit}
+					loading={loading}
 				/>
 			) : (
 				<Authorize
@@ -198,6 +205,7 @@ const Authenticate = () => {
 					handleChange={handleChange}
 					isFormValid={isFormValid}
 					handleSubmit={handleSubmit}
+					loading={loading}
 				/>
 			)}
 		</div>

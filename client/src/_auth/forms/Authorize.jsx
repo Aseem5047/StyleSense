@@ -1,4 +1,5 @@
 import React from "react";
+import Loader from "./Loader";
 
 const Authorize = ({
 	errors,
@@ -9,6 +10,7 @@ const Authorize = ({
 	data,
 	isFormValid,
 	handleSubmit,
+	loading,
 }) => {
 	const handleKeyDown = (e) => {
 		if (e.key === ("Enter" || "13") && isFormValid) {
@@ -86,7 +88,7 @@ const Authorize = ({
 						} `}
 						onClick={handleSubmit}
 					>
-						Authenticate
+						{loading ? <Loader /> : "Authenticate"}
 					</button>
 				</div>
 				{/* Switch Button */}
