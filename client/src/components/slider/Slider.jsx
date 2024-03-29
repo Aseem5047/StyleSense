@@ -45,7 +45,7 @@ const Slider = ({ bannerImages }) => {
 
 	return (
 		<div
-			className="relative flex flex-col items-center justify-center w-full h-full px-7 "
+			className="relative flex flex-col items-center justify-center w-full h-full px-4 sm:px-7 "
 			ref={sliderRef}
 		>
 			<div className="relative flex items-center ">
