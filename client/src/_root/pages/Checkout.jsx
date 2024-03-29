@@ -14,7 +14,6 @@ const Checkout = () => {
 	useMemo(() => {
 		const groupedItems = cartItems.reduce((results, item) => {
 			(results[item.id] = results[item.id] || []).push(item);
-			// console.log(results);
 			return results;
 		}, {});
 		setGroupedItemsInBasket(groupedItems);

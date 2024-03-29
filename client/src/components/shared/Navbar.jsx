@@ -67,7 +67,7 @@ const Navbar = () => {
 			<Search />
 
 			{/* Profile and menu section */}
-			<div className="flex gap-4 items-center justify-center">
+			<div className="flex gap-2 sm:gap-4 items-center justify-center">
 				<div
 					className="relative flex items-center justify-center gap-2 cursor-pointer"
 					onClick={() => setToggleSignOutMenu((prev) => !prev)}

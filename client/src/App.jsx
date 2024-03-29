@@ -15,8 +15,7 @@ import { useSelector } from "react-redux";
 import Profile from "./_root/pages/Profile";
 
 export default function App() {
-	axios.defaults.baseURL =
-		"https://stylesenseback.vercel.app/" || "http://127.0.0.1:5000";
+	axios.defaults.baseURL = "http://127.0.0.1:5000";
 
 	axios.defaults.withCredentials = true;
 
@@ -29,7 +28,6 @@ export default function App() {
 	}, []);
 
 	const user = useSelector(getUser);
-	console.log(user);
 
 	return (
 		<>

@@ -10,7 +10,6 @@ const CheckoutProduct = ({ product, quantity }) => {
 	const dispatch = useDispatch();
 	const { theme } = useThemeToggle();
 	const handleAddToCart = () => {
-		console.log("adding item to card");
 		try {
 			dispatch(addItem(product));
 			toast.success(`Product added to Cart`);
@@ -20,7 +19,6 @@ const CheckoutProduct = ({ product, quantity }) => {
 	};
 
 	const handleRemoveItem = (itemId) => {
-		console.log(itemId);
 		try {
 			dispatch(removeItem(itemId));
 			toast.success("Item Removed");

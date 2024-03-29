@@ -42,10 +42,8 @@ const getAllUsers = async (req, res) => {
 
 const editProfile = async (req, res) => {
     const id = req.params?.id;
-    // console.log("Data Received", req.body);
     const { _id, password, ...otherFields } = req.body;
 
-    // console.log(id, _id);
 
     if (id === _id) {
         try {

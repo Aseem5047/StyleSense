@@ -20,8 +20,6 @@ const ProductDetail = () => {
 
 	const { detail, image, price, rating, title, type } = currentProduct;
 
-	console.log(title);
-
 	return (
 		<div className="grid grid-cols-1 lg:grid-cols-2 3xl:grid-cols-1 h-full w-full 3xl:w-1/2 items-center justify-center gap-4 lg:gap-7 px-5 lg:px-7 py-7">
 			{/* product image */}

@@ -12,7 +12,6 @@ const Product = ({ product }) => {
 	const dispatch = useDispatch();
 
 	const handleAddToCart = () => {
-		console.log("adding item to card");
 		try {
 			dispatch(addItem(product));
 			toast.success(`Product added to Cart`);
