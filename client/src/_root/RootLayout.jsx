@@ -9,7 +9,6 @@ const RootLayout = () => {
 			<section className="flex flex-1 w-full justify-center items-center h-full ">
 				<Outlet />
 			</section>
-			<Navbar />
 		</div>
 	);
 };
