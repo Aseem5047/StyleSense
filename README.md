@@ -10,10 +10,10 @@ StyleSense is a dynamic MERN stack application, built on React Vite, that serves
   * Express
   * NodeJs
   * Tailwind Css
+    
+![image](https://github.com/Aseem5047/StyleSense/assets/80787027/c4adfa5f-b909-40cc-ba2b-90ab43f06f02)
 
-![image](https://github.com/Aseem5047/StyleSense/assets/80787027/3d8fd259-3eec-4743-912f-c599e526250a)
-
-![image](https://github.com/Aseem5047/StyleSense/assets/80787027/e1cad309-0c40-497e-8269-f409957476de)
+![image](https://github.com/Aseem5047/StyleSense/assets/80787027/fcf1f6c6-a892-4352-b2af-ec9d13fdaf2a)
 
 # Features
   * Secure Authentication
@@ -21,9 +21,7 @@ StyleSense is a dynamic MERN stack application, built on React Vite, that serves
   * Neat and clean UI
   * Tracks the Changes in Theme made by User
 
-![image](https://github.com/Aseem5047/StyleSense/assets/80787027/1f50be4b-55d4-4ff3-9b99-16c26f49ff64)
-
-![image](https://github.com/Aseem5047/StyleSense/assets/80787027/e795012f-dd9b-40ac-a07a-b44d377ddf89)
+![image](https://github.com/Aseem5047/StyleSense/assets/80787027/0d554fb1-6bc8-49ba-81d6-d80fdb637b4f)
 
 # Steps to run in your machine
 ### Run the following commands
