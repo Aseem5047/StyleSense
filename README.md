@@ -6,9 +6,22 @@ StyleSense is a dynamic MERN stack application, built on React Vite, that serves
 
 # Work Flow
 
-##### 1. User Theme Selection: When a user visits the e-commerce site, they have the option to select their preferred theme.
-##### 2. Storing Theme Preference: When the user selects a theme, their preference is saved in database accordingly.
-##### 3. User Authentication & Retrieving Theme Preference: After authenticating the previous selected theme gets auto-applied
+#### Already Registered User Credentials for Testing ...
+
+✔ username: aseem5047
+✔ password: Hello@123
+✔ email: aseemgupta2002@gmail.com
+
+##### 1. Register / Authenticate -> Explore and Toggle Theme and Select Text Preference using Buttons on Navbar
+##### 2. Stay Logged In or Log Out and Open another window say Incognito -> Repeat the Authentication 
+##### 3. Theme & Text Preferences from previous session gets applied
+##### 4. Now You can Personalize the application the way you want
+
+### Details 
+
+##### ✔ User Theme Selection: When a user visits the e-commerce site, they have the option to select their preferred theme.
+##### ✔ Storing Theme Preference: When the user selects a theme, their preference is saved in database accordingly.
+##### ✔ User Authentication & Retrieving Theme Preference: After authenticating the previous selected theme gets auto-applied
 
 # Tech Used
   * React Vite
