@@ -58,6 +58,10 @@
 }
 
 @layer utilities {
+	.productLayout {
+		@apply grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-10 items-center py-5 w-full max-w-[92%] overflow-x-hidden overflow-y-scroll no-scrollbar;
+	}
+
 	.navLink {
 		@apply text-base transition-all duration-500 hover:px-4 hover:py-2 rounded-full hover:bg-[var(--default-color)] hover:text-white;
 	}
