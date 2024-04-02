@@ -32,7 +32,7 @@ const Authorize = ({
 						Login using {choosenField !== "Username" ? "Username" : "Email"}
 					</button>
 					<form
-						className="flex flex-col gap-4 justify-center items-center w-full p-4 mx-auto "
+						className="flex flex-col gap-4 justify-center items-start w-full p-4 mx-auto"
 						onKeyDown={handleKeyDown}
 					>
 						{choosenField === "Username" && (
@@ -77,7 +77,7 @@ const Authorize = ({
 						/>
 
 						{errors.password && (
-							<p className="error-message">{errors.password}</p>
+							<span className="error-message">{errors.password}</span>
 						)}
 					</form>
 					<button

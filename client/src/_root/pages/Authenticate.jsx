@@ -100,7 +100,7 @@ const Authenticate = () => {
 				)
 			) {
 				newErrors.password =
-					"Password must contain at least 8 characters, including one uppercase letter, one lowercase letter, one number, and one special character.";
+					"Password must contain at least 8 characters, including one uppercase letter, one lowercase letter, one number, and one special character. ( Hello@123 )";
 			} else {
 				delete newErrors.password; // Remove the error if it's valid
 			}
