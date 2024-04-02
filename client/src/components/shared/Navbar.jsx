@@ -10,6 +10,7 @@ import Cookies from "js-cookie";
 import useAuth from "../../context/AuthContext";
 import Search from "./Search";
 import ThemeEditor from "./ThemeEditor";
+import axios from "axios";
 
 const Navbar = () => {
 	const [toggleSignOutMenu, setToggleSignOutMenu] = useState(false);
@@ -29,14 +30,8 @@ const Navbar = () => {
 		try {
 			setToggleSignOutMenu(false);
 			// Make a request to the logout endpoint
-			const response = await fetch("/auth/logout", {
-				method: "POST",
-				credentials: "include",
-				headers: {
-					"Content-Type": "application/json",
-				},
-			});
-			if (response.ok) {
+			const response = await axios.post("/auth/logout");
+			if (response.status === 200) {
 				// Clear token from localStorage and cookies
 				Cookies.remove("token");
 				localStorage.clear();
@@ -51,7 +46,6 @@ const Navbar = () => {
 		} catch (error) {
 			console.error("Logout error:", error);
 			toast.error("Something Went Wrong");
-			// Handle error appropriately, e.g., show an error toast
 		}
 	};
 
