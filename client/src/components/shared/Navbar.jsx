@@ -34,6 +34,8 @@ const Navbar = () => {
 			// Remove token from localStorage and cookies
 			// Remove token cookie
 			removeCookie("token", { path: "/" });
+			// Set the random token as a cookie
+			setCookie("token", "Unauthorized Access", { path: "/" });
 			localStorage.clear();
 			// Dispatch action to clear user
 			dispatch(clearUser());
