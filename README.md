@@ -13,7 +13,7 @@ StyleSense is a dynamic MERN stack application, built on React Vite, that serves
 ✔ email: aseemgupta2002@gmail.com
 
 ##### 1. Register / Authenticate -> Explore and Toggle Theme and Select Text Preference using Buttons on Navbar
-##### 2. Stay Logged In or Log Out and Open another window say Incognito -> Repeat the Authentication 
+##### 2. Stay Logged In or Log Out and Open another window say Incognito ( you have to allow third party cookies ) -> Repeat the Authentication 
 ##### 3. Theme & Text Preferences from previous session gets applied
 ##### 4. Now You can Personalize the application the way you want
 
