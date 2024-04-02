@@ -10,7 +10,6 @@ import Cookies from "js-cookie";
 import useAuth from "../../context/AuthContext";
 import Search from "./Search";
 import ThemeEditor from "./ThemeEditor";
-import { useCookies } from "react-cookie"; // Import useCookies hook
 
 const Navbar = () => {
 	const [toggleSignOutMenu, setToggleSignOutMenu] = useState(false);
@@ -21,8 +20,6 @@ const Navbar = () => {
 	const dispatch = useDispatch();
 	const { theme } = useThemeToggle();
 
-	const [cookies, setCookie, removeCookie] = useCookies(); // useCookies hook
-
 	// List of image filenames
 	let imageList = ["1.png", "2.png", "3.png", "4.png", "5.png"];
 
@@ -31,15 +28,26 @@ const Navbar = () => {
 	const handleLogout = async (event) => {
 		try {
 			setToggleSignOutMenu(false);
-			// Remove token from localStorage and cookies
-			// Remove token cookie
-			removeCookie("token", { path: "/" });
-			localStorage.clear();
-			// Dispatch action to clear user
-			dispatch(clearUser());
-			toast.success("User Logged Out");
-			setIsAuthenticated(false);
-			navigate("/authenticate");
+			// Make a request to the logout endpoint
+			const response = await fetch("/auth/logout", {
+				method: "POST",
+				credentials: "include",
+				headers: {
+					"Content-Type": "application/json",
+				},
+			});
+			if (response.ok) {
+				// Clear token from localStorage and cookies
+				Cookies.remove("token");
+				localStorage.clear();
+				// Dispatch action to clear user
+				dispatch(clearUser());
+				toast.success("User Logged Out");
+				setIsAuthenticated(false);
+				navigate("/authenticate");
+			} else {
+				throw new Error("Failed to logout");
+			}
 		} catch (error) {
 			console.error("Logout error:", error);
 			toast.error("Something Went Wrong");
