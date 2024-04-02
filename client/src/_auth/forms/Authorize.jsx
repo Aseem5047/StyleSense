@@ -19,7 +19,7 @@ const Authorize = ({
 	};
 	return (
 		<>
-			<div className="grid lg:grid-cols-2 min-w-[18rem] max-w-full sm:max-w-[75%] lg:max-w-[70rem] 3xl:max-w-[85rem] h-full  border border-gray-300 shadow-lg rounded-xl gap-4 animate-slide-in-left m-auto overflow-x-hidden overflow-y-scroll no-scrollbar ">
+			<div className="authenticatePages">
 				{/* Authentication Form */}
 				<div className="flex flex-col items-center justify-center py-6 px-2">
 					<span className="text-3xl sm:text-5xl font-extrabold mb-4 text-center">
@@ -92,7 +92,7 @@ const Authorize = ({
 					</button>
 				</div>
 				{/* Switch Button */}
-				<div className="flex flex-col py-6  items-center justify-center bg-gradient-to-r from-[#03a9f4f0] to-blue-600  text-white lg:rounded-lg">
+				<div className="flex flex-col py-6  items-center justify-center bg-gradient-to-r from-[#03a9f4f0] to-blue-600  text-white sm:rounded-lg">
 					<span className="text-4xl md:text-5xl font-extrabold mb-4 text-center">
 						Hello Friend
 					</span>

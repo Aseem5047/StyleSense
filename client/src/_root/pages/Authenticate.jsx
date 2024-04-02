@@ -184,7 +184,7 @@ const Authenticate = () => {
 	};
 
 	return (
-		<div className="h-full lg:py-4 w-full flex justify-center items-center 3xl:p-10">
+		<div className="h-full lg:py-4 w-full flex justify-center items-center sm:p-7 3xl:p-10 overflow-x-hidden">
 			{register ? (
 				<Register
 					errors={errors}

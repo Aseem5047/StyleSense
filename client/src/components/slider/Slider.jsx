@@ -71,7 +71,7 @@ const Slider = ({ bannerImages }) => {
 							<img
 								src={bannerImages[adjustedIndex]}
 								alt=""
-								className={`rounded-xl shadow-lg h-full min-h-[200px] sm:min-h-[250px] lg:min-h-[275px] object-cover cursor-grab`}
+								className={`rounded-xl shadow-lg h-full min-h-[200px] sm:min-h-[250px] lg:min-h-[275px] object-cover cursor-pointer`}
 								onClick={() =>
 									setCurrentIndex(
 										(currentImageIndex + bannerImages.length) %

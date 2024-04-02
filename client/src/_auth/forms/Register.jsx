@@ -17,9 +17,9 @@ const Register = ({
 	};
 	return (
 		<>
-			<div className="grid lg:grid-cols-2 min-w-[18rem] max-w-full sm:max-w-[75%] lg:max-w-[70rem]3xl:max-w-[85rem] h-full  border border-gray-300 shadow-lg rounded-xl gap-4 animate-slide-in-right overflow-x-hidden overflow-y-scroll no-scrollbar ">
+			<div className="authenticatePages">
 				{/* Switch Button */}
-				<div className="flex flex-col py-6 items-center justify-center bg-gradient-to-r from-blue-600 to-[#03a9f4f0] text-white lg: rounded-lg">
+				<div className="flex flex-col py-6 items-center justify-center bg-gradient-to-r from-blue-600 to-[#03a9f4f0] text-white sm:rounded-lg">
 					<span className="text-4xl md:text-5xl font-extrabold mb-4 text-center">
 						Welcome Back
 					</span>
