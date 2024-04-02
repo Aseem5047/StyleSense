@@ -29,7 +29,7 @@ const CheckoutProduct = ({ product, quantity }) => {
 
 	return (
 		<div
-			className={`flex flex-col md:flex-row xl:w-3/4 3xl:w-1/2 mx-auto items-center gap-12 shadow-lg py-7 px-5 rounded-xl`}
+			className={`flex flex-col md:flex-row xl:w-3/4 mx-auto items-center gap-12 shadow-lg py-7 px-5 rounded-xl`}
 		>
 			{/* left side image */}
 			<Link
