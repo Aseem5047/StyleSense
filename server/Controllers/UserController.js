@@ -90,7 +90,7 @@ const editThemePreference = async (req, res) => {
             process.env.JWT_KEY,
             { expiresIn: "1h" }
         );
-        res.status(200).cookie('token', token, { sameSite: 'None', secure: true }).json({ user, token });
+        res.status(200).json({ user, token });
     } catch (error) {
         res.status(500).json({ error: error.message });
         console.log(error);
