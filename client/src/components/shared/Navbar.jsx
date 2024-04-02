@@ -30,7 +30,7 @@ const Navbar = () => {
 		try {
 			setToggleSignOutMenu(false);
 			// Make a request to the logout endpoint
-			const response = await axios.post("/auth/logout");
+			const response = await axios.delete("/auth/logout");
 			if (response.status === 200) {
 				// Clear token from localStorage and cookies
 				Cookies.remove("token");
