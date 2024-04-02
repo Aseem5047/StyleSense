@@ -10,6 +10,7 @@ import Cookies from "js-cookie";
 import useAuth from "../../context/AuthContext";
 import Search from "./Search";
 import ThemeEditor from "./ThemeEditor";
+import { useCookies } from "react-cookie"; // Import useCookies hook
 
 const Navbar = () => {
 	const [toggleSignOutMenu, setToggleSignOutMenu] = useState(false);
@@ -20,6 +21,8 @@ const Navbar = () => {
 	const dispatch = useDispatch();
 	const { theme } = useThemeToggle();
 
+	const [cookies, setCookie, removeCookie] = useCookies(); // useCookies hook
+
 	// List of image filenames
 	let imageList = ["1.png", "2.png", "3.png", "4.png", "5.png"];
 
@@ -29,7 +32,8 @@ const Navbar = () => {
 		try {
 			setToggleSignOutMenu(false);
 			// Remove token from localStorage and cookies
-			Cookies.remove("token");
+			// Remove token cookie
+			removeCookie("token", { path: "/" });
 			localStorage.clear();
 			// Dispatch action to clear user
 			dispatch(clearUser());
